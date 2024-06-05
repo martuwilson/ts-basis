@@ -3,7 +3,7 @@ import './App.css'
 
 //import { name, age } from './bases/01-types'
 //import { animalito } from './bases/02-objects'
-import { pikachu } from './bases/03-clases'
+import { charmander } from './bases/04-injections'
 
 function App() {
 
@@ -12,8 +12,7 @@ function App() {
       
       <h1>Vite + React</h1>
       <hr />
-      <p>{pikachu.id}</p>
-      <p>{pikachu.name}</p>
+      <h2>{charmander.name}</h2>
     </>
   )
 }
