@@ -14,3 +14,8 @@ export const animalito:Pokemon = {
 }
 
 export default Pokemon
+
+
+export const pokemons: Pokemon[] = [];
+
+pokemons.push(animalito);
