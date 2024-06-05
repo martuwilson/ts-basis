@@ -1,3 +1,5 @@
+import axios from "axios";
+
 // clases son representaciones de objetos en el mundo real
 export class Pokemon {
     //getters - sirven para obtener un valor de una propiedad privada
@@ -19,6 +21,12 @@ export class Pokemon {
         console.log(`Hello, I'm ${this.name}`)
     }
 
+    async getMoves() {
+        const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
+        console.log(data.moves)
+
+        return data.moves
+    }
 }
 
 export const pikachu = new Pokemon(1, 'pikachu');
