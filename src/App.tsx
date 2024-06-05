@@ -1,7 +1,8 @@
 
 import './App.css'
 
-import { name, age } from './bases/01-types'
+//import { name, age } from './bases/01-types'
+import { animalito } from './bases/02-objects'
 
 function App() {
 
@@ -9,9 +10,10 @@ function App() {
     <>
       
       <h1>Vite + React</h1>
-      <h2>{name}</h2>
-      <p>{age}</p>
-
+      <hr />
+      <h2>
+        {animalito.name}
+      </h2>
     </>
   )
 }
