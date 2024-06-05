@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PokeapiReponse } from "../interfaces/pokeapi-response.interface";
 
 // clases son representaciones de objetos en el mundo real
 export class Pokemon {
@@ -22,7 +23,7 @@ export class Pokemon {
     }
 
     async getMoves() {
-        const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
+        const {data} = await axios.get<PokeapiReponse>(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
         console.log(data.moves)
 
         return data.moves
