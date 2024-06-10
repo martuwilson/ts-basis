@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { Move, PokeapiResponse } from '../interfaces/pokeapi-response.interface';
-import { PokeApiFetchAdapter, pokeApiAdapter } from '../api/pokeApi.adapter';
+import { HttpAdapter, PokeApiFetchAdapter, pokeApiAdapter } from '../api/pokeApi.adapter';
 
 export class Pokemon {
 
@@ -12,7 +13,7 @@ export class Pokemon {
         public readonly id: number, 
         public name: string,
         // Todo: inyectar dependencias
-        private readonly http: pokeApiAdapter
+        private readonly http: HttpAdapter // no importa que clase sea por ejemplo pokeApiFetch o pokeApi, mientras tenga la interface HttpAdapter
     ) {}
 
     scream() {
@@ -27,6 +28,8 @@ export class Pokemon {
        
         const data = await this.http.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
 
+        console.log(data.moves);
+        
         return data.moves;
     }
 
